@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Course,Tag,Tutor,Practice,Submission,Article,Video
+from . models import Course, Tag, Tutor, Practice, Submission, Article, Video
 # Register your models here.
 admin.site.register(Course)
 admin.site.register(Tag)

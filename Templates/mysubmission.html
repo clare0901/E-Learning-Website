@@ -1,14 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    {% for q_set in q_set %}
-    <embed src="{{q_set.Code.url}}" width="800px" height="2100px" />
-    {% endfor %}
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}View Submission{% endblock %}
+
+{% block body %}
+<style>
+    body {
+        background-image: url('/static/images/home_bg.jpg');
+        height: 500px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+</style>
+
+    <div class="container">
+        <div class="row">
+            
+                {% for q_set in q_set %}
+                    <div class="card col-lg-6 d-flex justify-content-center">
+                        <embed src="{{q_set.Code.url}}" width="800px" height="200px" />
+                    </div>
+                {% endfor %}
+            
+        </div>
+    </div>
+
+{% endblock %}

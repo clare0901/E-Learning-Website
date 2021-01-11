@@ -1,30 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-   
-</head>
-<body>
-    <br>
+{% extends 'base.html' %}
+{% block title %}View Courses{% endblock %}
+{% block body %}
+<style>
+    body {
+        background-image: url('/static/images/home_bg.jpg');
+        height: 500px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+</style>
     {% if flag == 0 %}
-    <h1>No Video Published Yet</h1>
-    
+        <h5 class="no_video">Sorry, No Video Published Yet !!!</h5>
     {% endif %}
-    {% for video in video %}
-    <a href="{{video.Video_Link}}">{{video.Video_Link}}</a>
-    
-    
-   
-  
-    <a href="{% url 'problem' video.id  %}">Practice Here</a>
 
-  
+    <div class="container mt-5">
+        <div class="row">
+            {% for video in video %}
+                <div class="card col-lg-5 m-4 p-4"  style="border: 2px solid black; border-style:double; ">
+                    <ul>
+                        <li> 
+                            <a class="video_link" href="{{video.Video_Link}}" style="font-weight:bold;">VIEW/ADD VIDEO</a><br>
+                            <br> To Practice, 
+                            <a class="video_link" href="{% url 'problem' video.id  %}">CLICK HERE</a>
+                        </li>
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
     
-   <br>
-   <br>
-    {% endfor %}
-</body>
-</html>
+    
+
+{% endblock %}

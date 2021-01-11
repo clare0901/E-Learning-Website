@@ -1,3 +1,4 @@
+{% load static %}
 {% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
@@ -5,17 +6,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Log In</title>
+    <link rel="shortcut icon" href="/static/images/favicon.ico"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--static files-->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
+<style>
+    body{
+        background-color:whitesmoke;
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+    }
+
+</style>
 <body>
-    <form method="POST">
-        {%csrf_token %}
-        {{form|crispy}}
-        <button type= "submit" > Sign In </button>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-7" >
+                <img id="teacher" class="pl-4" src="/static/images/teacher.svg" width="650" height="600" alt="Teacher">
+            </div>
 
-
-    </form>
-
-    <h3>Dont have an account yet !<a href="register">Click Here</a></h3>
+            <div class="col-7 col-lg-4" id="login">
+                <div class="d-flex justify-content-center">
+                    <img class="mt-2" src="/static/images/grad.svg" alt="Grad-hat" 
+                        width="170" height="170">
+                </div>
+                <h3 class="login_title">LOGIN</h3>
+                <div>
+                    <form method="POST" id="login_form">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit" id="login-btn" class="btn btn-success mt-4 mb-2">Log In</button>
+                        <div id="no-acc-div">
+                            <p>Don't have an account yet !
+                                <a id="reg-link" class="" href="register">Sign Up</a>
+                            </p>
+                        </div>    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

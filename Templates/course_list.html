@@ -1,20 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    {% for course in course %}
-    <h1>{{course.Name}}</h1>
-    <h1>{{course.Desc}}</h1>
-    <a href="{% url 'video' course.id %}">ViewVideo</a>
-    <a href="{% url 'enroll' course.id  %}">Enroll For this Course</a>
-    <br>
-    {% endfor %}
-    
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}View Courses{% endblock %}
+{% block body %}
+<style>
+  body {
+      background-image: url('/static/images/home_bg.jpg');
+      height: 500px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow-x: hidden;
+  }
+</style>
+    <div class="container mt-4 p-5">
+        <div class="row">
+            {% for course in course %}
+                <div class="card course_list_card col-lg-12 mb-5" style="border: 2px solid black; border-style:double; ">
+                  <ul>
+                    <li>
+                      <h3>{{course.Name}}</h3>
+                      <p>{{course.Desc}}</p>
+                      <a class="course_list" href="{% url 'video' course.id %}">&gt; View Video</a><br>
+                      <a class="course_list" href="{% url 'enroll' course.id  %}">&gt; Enroll For this Course</a>
+                    </li>
+                  </ul>
+                </div>
+            {% endfor %}
+        </div>   
+    </div>
+{% endblock %}

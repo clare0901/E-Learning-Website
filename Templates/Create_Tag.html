@@ -1,20 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    The Above Tag Doesnt seem to Exist,Add Tag Description:
-    <form action="add_desc" method="POST">
-            {% csrf_token %}
-       Desc <input type="text" name="Desc" placeholder="Add Your Tag Desc Here">
+{% extends 'base.html' %}
+{% block title %}Publish Course{% endblock %}
+{% block body %}
+<style>
+    body {
+        background-image: url('/static/images/home_bg.jpg');
+        height: 500px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+    
+</style>
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card col-lg-8 p-5" style="border: 2px solid black; border-style:double;">
+            <h5 class="mb-4">** The Above Tag Doesn't seem to Exist, Add Tag Description: **</h5>
+            <form action="add_desc" method="POST">
+                {% csrf_token %}
+                Description: <input class="add_desc" type="text" name="Desc" placeholder="Add Your Tag Desc Here">
+                <button class="btn btn-success mt-4" type="submit" style="display: block;height:35px;width:20%;">Submit</button>
+            </form>
+        </div>
+    </div>
 
-
-     <input type="submit">
-    </form>
-
-</body>
-</html>
+{% endblock %}

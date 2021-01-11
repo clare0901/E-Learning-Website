@@ -1,0 +1,432 @@
+/* login.html */
+
+.login_title{
+    text-shadow: 2px 2px 3px #5b5583;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -30px;
+}
+
+#grad{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#login_form{
+    padding: 5px 20px 5px 20px;
+}
+
+#no-acc-div{
+    text-align: center;
+}
+
+#reg-link{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+    width: 80px;
+    display: block;
+    color: black;
+}
+
+#reg-link:hover{
+    animation-name: ease-in;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    text-decoration: none;
+}
+
+@keyframes ease-in {
+    0%{
+        transform: scale(1.5,1.5);
+    }  
+}
+
+#login-btn{
+    margin-top: 20px;
+    height: 35px;
+    width:100%;
+    border-radius: 50px;
+}
+
+@media (max-width: 1290px){
+    #teacher{
+        margin-top: 15px;
+        width: 600px;
+        height: 600px;
+    }
+}
+
+@media (max-width: 1070px){
+    #teacher{
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 992px){
+    #login{
+        margin-left: auto;
+        margin-right: auto; 
+    }
+    #teacher{
+        display: none;
+    }
+}
+
+/* register.html */
+
+.reg_container_fluid {
+    margin: 30px 0px 30px 0px;
+    opacity: .9;
+    z-index: 1;
+}
+
+.reg_col{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reg_title {
+    text-shadow: 2px 2px 3px #5b5583;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -30px;
+}
+
+#register {
+    padding: 20px;
+}
+
+#reg-btn {
+    margin-top: 15px;
+    border-radius: 50px;
+    width: 100%;
+}
+
+/* base.html */
+
+.nav-link, .navbar-brand, .nav-link:hover, .navbar-brand:hover {
+    font-weight: bold;
+}
+
+.navbar-toggler {
+border: 0px;
+}
+
+/* home.html */
+
+.home_container {
+    height: 100vh;
+}
+
+.success {
+    border-radius: 50%;
+}
+
+#wel {
+    text-shadow: 2px 2px 1px black;
+}
+
+#wel,
+.l_g_e {
+    color: darkslateblue;
+}
+
+.l_g_e {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#start {
+    margin-bottom: 40px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 3px darkslateblue;
+}
+
+.view_home {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.intro {
+    padding: 30px;
+}
+
+.animate__animated.animate__bounceInLeft,
+.animate__animated.animate__bounceInRight {
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+
+@media(max-width: 992px) {
+    .welcome_text {
+        margin-top: 80px;
+    }
+
+    .l_g_e,
+    .welcome_text {
+        text-align: center;
+    }
+
+    .intro {
+        padding: 40px;
+    }
+
+    .img {
+        padding-right: 10px;
+    }
+}
+
+@media(max-width: 810px) {
+    .intro {
+        margin-right: -60px;
+    }
+}
+
+@media(max-width: 768px) {
+    .success {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #start {
+        margin-top: 250px;
+    }
+
+    .img {
+        margin-top: 10px;
+    }
+
+    .course_odd {
+        margin-top: 25px;
+    }
+
+    .course_even {
+        margin-top: 320px;
+        margin-bottom: -5px;
+    }
+
+    .img_even {
+        margin-top: -540px;
+    }
+}
+
+@media(max-width: 580px) {
+    #start {
+        margin-top: 320px;
+    }
+}
+
+@media(max-width: 550px) {
+    .intro {
+        text-align: center;
+        padding: 10px;
+        padding-right: 40px;
+    }
+}
+
+@media(max-width: 550px) {
+    .success {
+        width: 320px;
+        height: 280px;
+        border-radius: 5px;
+    }
+
+    .start_home_container {
+        width: 400px;
+    }
+
+    .img {
+        margin-left: -10px;
+        width: 300px;
+    }
+
+    .img_even {
+        margin-bottom: 90px;
+    }
+
+    .course_even {
+        margin-top: 300px;
+    }
+}
+
+/* profile.html */
+
+.profile_col{
+    border-radius: 10px;
+    padding: 20px 30px 20px 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+    opacity: .8;
+}
+.profile_pic_center{        
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+.update_profile{
+    text-align: center;
+    color: black;
+    display: block;
+    margin: 20px 0px 20px 0px;
+}
+.update_profile:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.view{
+    display:inline-block;
+    border-radius: 5px;
+    padding-left: 7px;
+    width: 30vw;
+    border: 0px;
+    margin-bottom: 15px;
+}
+.view_heading{
+    display: block;
+    font-weight: bold;
+}
+.form_detail{
+    margin-left: auto;
+    margin-right: auto;
+}
+@keyframes change_color_profile{
+    0%{
+        background-color: #F1A39C;
+    }
+    10%{
+        background-color: #F4CFC7; 
+    }
+    30%{
+        background-color: 	#57CF9B;
+    }
+    60%{
+        background-color: #438d7e;
+    }
+    90%{
+        background-color: #FEE1AE;
+    }
+    100%{
+        background-color: #F1A39C;
+    }
+}
+
+/* edit_profile.html */
+
+@keyframes change_color_edit_profile{
+    0%{
+        background-color: #F1A39C;
+    }
+    10%{
+        background-color: #F4CFC7; 
+    }
+    30%{
+        background-color: 	#57CF9B;
+    }
+    60%{
+        background-color: #438d7e;
+    }
+    90%{
+        background-color: #FEE1AE;
+    }
+    100%{
+        background-color: #F1A39C;
+    }
+}
+.edit_profile_card{
+    margin: 40px auto 60px auto;
+    border-radius: 10px;
+    padding: 20px 30px 20px 30px;
+    opacity: .8;
+}
+.edit_profile_btn{
+    width: 48%;
+    float: right;
+}
+.submit_profile_btn{
+    width: 48%;
+    float: left;
+}
+
+/* course_list.html */
+
+.course_list{
+    color: black;
+  }
+.course_list:hover{
+    text-decoration: none;
+    color: black;
+}
+.course_list_card{
+    border-radius: 400px;
+    padding: 70px;
+}
+.course_list_card:hover{
+    box-shadow: 8px 8px 20px #666666;
+}
+
+/* video.html */
+
+.no_video{
+    text-align: center;
+    margin-top: 180px;
+    background-color: black;
+    color: red;
+    padding: 20px;
+}
+.video_link{
+    color: black;
+}
+
+.video_link:hover{
+    text-decoration: none;
+    color: black;
+}
+
+/* Problemset.html */
+
+.problem_set{
+    color: black;
+}
+.problem_set:hover{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* submission.html => None */
+
+/* mysubmission.html =>None */
+
+/* mycourse */
+.continue_course:hover{
+    text-decoration: none;
+    color: black;
+}
+
+/* publish.html */
+
+.publish_course{
+    display: flex;
+    width: 110%;
+    border-radius: 3px;
+    border: 1px solid black;
+    padding-left: 5px;
+    outline: none;
+}
+
+/* Create_Tag.html */
+
+.add_desc{
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 3px;
+    width: 50%;
+    margin-left: 5px;
+}

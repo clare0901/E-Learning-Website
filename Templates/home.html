@@ -1,23 +1,171 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    Hello!!<br>
-    <a href ="{% url 'profile_view' %}">View Profile</a>
-    <a href="{% url  'course_list' %}">View Courses</a>
-    <a href="{% url 'Mycourses' %}">MyCourses</a>
-    {% if flag == 0 %}
-    <a href="{% url 'tutor' %}">Create Course,Become a tutor Now</a>
-    {% endif %}
-    {% if flag == 1 %}
-    <a href="{% url 'publish' %}">Publish Course</a>
-    <a href="{% url 'myPublication' %}">View Courses You have created</a>
-    {% endif %}
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block title %}Home{% endblock %}
+{% block body %}
+<style>
+    body {
+        background-image: url('/static/images/home_bg.jpg');
+        height: 500px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+    
+    @media(max-width: 580px) {
+        html {
+            margin-left: 30px;
+        }
+    }
+</style>
+<div class="home_container container-fluid mb-5">
+    <div class="row justify-content-end">
+        <div class="col-sm-12 col-md-5 col-lg-5">
+            <h1 id="wel" class="welcome_text animate__animated animate__bounceInRight">Welcome Back!!</h1>
+            <p class="l_g_e animate__animated animate__bounceInLeft">
+                We help you Shape Your Future. <br>
+                We help you Learn. <br>
+                We help you Grow.
+            </p>
+        </div>
+
+        <div class="success_div col-sm-12 col-md-7 col-lg-6">
+            <img class="success animate__animated animate__bounceInRight" src="/static/images/learn.jpg"
+                alt="Success" width="500" height="320">
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <p class="intro">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione sequi ipsum iusto veniam doloribus.
+            Numquam explicabo quidem soluta, quis nesciunt tempora ipsum amet.
+            Aspernatur expedita nostrum quia ipsa consequatur quisquam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur ipsa, sunt facilis doloribus officiis,
+            exercitationem saepe excepturi aspernatur, tempora dolores hic non. Recusandae illum sint eos facere labore
+            in esse.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ea error ducimus enim similique.
+            Deserunt facilis architecto temporibus enim recusandae,
+            dolorem saepe, voluptates doloribus iste, reiciendis explicabo eveniet numquam distinctio?
+        </p>
+    </div>
+</div>
+
+<p id="start">Let's Get Started....</p>
+
+
+
+
+<!-- 1 -->
+<div class="start_home_container container card mb-5">
+    <div class="row p-5">
+        <div class="col col-md-8 col-lg-6">
+            <a href="{% url  'course_list' %}">
+                <img class="img rounded" src="/static/images/view_courses.jpg" alt="View Courses" width="400" height="300">
+            </a>
+        </div>
+        <div class="view_home col-md-4 col-lg-6">
+            <p class="course_odd">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab magni qui aut pariatur,
+                blanditiis odio sit culpa eius officia eaque cupiditate labore hic impedit sequi aliquam
+                at optio adipisci recusandae.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- 2 -->
+<div class="start_home_container container card mb-5">
+    <div class="row p-5">
+        <div class="view_home col-md-4 col-lg-6">
+            <p class="course_even">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab magni qui aut pariatur,
+                blanditiis odio sit culpa eius officia eaque cupiditate labore hic impedit sequi aliquam
+                at optio adipisci recusandae.
+            </p>
+        </div>
+        <div class="col-md-8 col-lg-6">
+            <a href="{% url 'Mycourses' %}">
+                <img class="img img_even rounded" src="/static/images/my_courses.jpg" alt="My Courses" width="400"
+                height="300">
+            </a>
+        </div>
+    </div>
+</div>
+
+{% if flag == 1 %}
+    <!-- 3 -->
+    <div class="start_home_container container card mb-5">
+        <div class="row p-5">
+            <div class="col col-md-8 col-lg-6">
+                <a href="{% url 'publish' %}">
+                    <img class="img rounded" src="/static/images/publish_course.jpg" alt="Publish Course" 
+                        width="400" height="300">
+                </a>
+            </div>
+            <div class="view_home col-md-4 col-lg-6">
+                <p class="course_odd">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab magni qui aut pariatur,
+                    blanditiis odio sit culpa eius officia eaque cupiditate labore hic impedit sequi aliquam
+                    at optio adipisci recusandae.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="start_home_container container card mb-5">
+        <div class="row p-5">
+            <div class="view_home col-md-4 col-lg-6">
+                <p class="course_even">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab magni qui aut pariatur,
+                    blanditiis odio sit culpa eius officia eaque cupiditate labore hic impedit sequi aliquam
+                    at optio adipisci recusandae.
+                </p>
+            </div>
+            <div class="col-md-8 col-lg-6">
+                <a href="{% url 'myPublication' %}">
+                    <img class="img rounded" src="/static/images/course_you_created.jpg"
+                        alt="View Courses You have created" width="400" height="300">
+                </a>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if flag == 0 %}
+    <!-- 5 -->
+    <div class="start_home_container container card mb-5">
+        <div class="row p-5">
+            <div class="col col-md-8 col-lg-6"> 
+                <a href="{% url 'tutor' %}">
+                    <img class="img rounded" src="/static/images/create_course.jpg" 
+                        alt="Create Course,Become a tutor Now" width="400" height="300">
+                </a> 
+            </div>
+            <div class="view_home col-md-4 col-lg-6">
+                <h1>Create Course,Become a tutor Now</h1>
+                <p class="course_odd">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab magni qui aut pariatur,
+                    blanditiis odio sit culpa eius officia eaque cupiditate labore hic impedit sequi aliquam
+                    at optio adipisci recusandae.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+<!-- <div>
+        <a href="{% url  'course_list' %}">View Courses</a><br>
+        <a href="{% url 'Mycourses' %}">MyCourses</a><br>
+        
+        {% if flag == 0 %}
+            <a href="{% url 'tutor' %}">Create Course,Become a tutor Now</a><br>
+        {% endif %}
+
+        {% if flag == 1 %}
+            <a href="{% url 'publish' %}">Publish Course</a><br>
+            <a href="{% url 'myPublication' %}">View Courses You have created</a><br>
+        {% endif %}
+    </div> -->
+{% endblock %}

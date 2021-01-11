@@ -1,17 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    {% for mycourse in mycourse %}
-    {{mycourse.Name}}
-    <a href="{% url 'video' mycourse.id %}">Continue  Course</a>
-    <br>
-    {% endfor %}
+{% extends 'base.html' %}
+
+{% block title %}My Courses{% endblock %}
+
+{% block body %}
+<style>
+    body {
+        background-image: url('/static/images/home_bg.jpg');
+        height: 500px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+    }
     
-</body>
-</html>
+</style>
+<div class="container mt-5">
+    <div class="row">
+        {% for mycourse in mycourse %}
+            <div class="card col-lg-5 m-4 p-4"  style="border: 2px solid black; border-style:double; text-align:center; ">
+                <h5>&gt;&gt; {{mycourse.Name}} &lt;&lt;</h5>
+                <a class="continue_course" href="{% url 'video' mycourse.id %}">Continue Course</a>
+                <br>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

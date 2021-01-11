@@ -1,18 +1,28 @@
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{p_form|crispy}}
-        {{u_form|crispy}}
-        <button type="submit">submit</button>
-    </form>
-</body>
-</html>
+{% block title %}Edit Profile{% endblock %}
+{% block body %}
+
+<style>
+    body{
+        animation: change_color_edit_profile 20s infinite ;
+        overflow-x: hidden;
+    } 
+</style>
+
+<div class="container">
+    <div class="edit_profile_card card col-sm-10 col-md-8 col-lg-8">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{p_form|crispy}}
+            {{u_form|crispy}}
+            <button class="submit_profile_btn btn btn-success mb-3 mt-3" type="submit">Submit</button>
+            <a href="{% url 'profile_view' %}">
+                <button class="edit_profile_btn btn btn-success mb-5 mt-3" type="button">Cancel</button>
+            </a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+    

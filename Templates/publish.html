@@ -1,26 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Publish Your Course</h1>
-    <form action="Published" method="POST">
-         {% csrf_token %}
-   Name <input type="text" name="Name" placeholder="Course_Name">
-   Desc <input type="text" name="Desc" placeholder="Course_Description">
-   Tag<input type="text" name="Tag" placeholder="Tag">
+{% extends 'base.html' %}
+{% block title %}Publish Course{% endblock %}
+{% block body %}
+<style>
+    body {
+        background-image: url('/static/images/home_bg.jpg');
+        height: 500px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+    
+</style>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 card p-5" style="border: 2px solid black; border-style:double;">
+                <h3 class="title mb-5" style="text-align: center; text-shadow:2px 2px 5px darkslategray;">Publish Course</h3>
+                
+                <div class="d-flex justify-content-center">
+                    <form method="POST" action="Published" class="p-2">
+                        {% csrf_token %}
+                        <label for="">Name:
+                        <input class="mt-2 publish_course" type="text" name="Name" placeholder="course name"></label><br>
 
-  
-   
-   
-   <input type="submit">
+                        <label for="">Description:
+                        <input class="mt-2 publish_course" type="text" name="Desc" placeholder="course description"></label><br>
+                        
+                        <label for="">Tag:
+                        <input class="mt-2 publish_course" type="text" name="Tag" placeholder="tag"></label>
 
-
-
-    </form>
-</body>
-</html>
+                        <button class="btn btn-success mt-3" type="submit" 
+                            style="height:35px; display:block; width:110%">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

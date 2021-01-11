@@ -1,24 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h2>UserName:{{user.username}}</h2>
-    <h2>f_name:{{user.first_name}}</h2>
-    <h2>l_name:{{user.last_name}}</h2>
-    <h2>email:{{user.email}}</h2>
-    <h2>Bio:{{user.profile.Bio}}</h2>
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+<style>
+    body {
+        animation: change_color_profile 20s  infinite ;
+        overflow-x: hidden;
+    }
+</style>
+    <div class="container">
+        <div class="card col-sm-10 col-md-8 col-lg-8 profile_col">
+
+            <div class="profile_pic_center">    
+                <img src="{{user.profile.Display_Pic.url}}" width="150px" height="150px">
+             </div>
+             
+            <div class="form_detail">
+                <label class="view_heading">Username:</label>
+                <input class="view" type="text" value="{{user.username}}" disabled> 
+            
+
+                <label class="view_heading">First name:</label>
+                <input class="view" type="text" value="{{user.first_name}}" disabled>
+            
+
+                <label class="view_heading">Last name:</label>
+                <input class="view" type="text" value="{{user.last_name}}" disabled>
+            
+                <label class="view_heading">Email:</label>
+                <input class="view" type="text" value="{{user.email}}" disabled>
+            
+
+                <label class="view_heading">Bio: </label>
+                <input class="view" type="text" value="{{user.profile.Bio}}" disabled>
+            
+                <label class="view_heading">Github Link:</label>
+                <input class="view" type="text" value="{{user.profile.Github_Link}}" disabled>
+
+                <a class="update_profile" href="{% url 'update_profile' %}">Edit Profile</a>
+        
+            </div>
+
+            
+            
+        </div>
+    </div>
+
+{% endblock %}
     
-    <h2>Work_sample:{{user.profile.Github_Link}}</h2>
 
-    <img scr="{{user.profile.Display_Pic.url}}" width="100px" height="100px">
-<br>
-<a href="{% url 'update_profile' %}">Update Profile</a>
-
-
-</body>
-</html>
